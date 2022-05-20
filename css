@@ -1,0 +1,416 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.center {
+	display: flex;
+	margin-left: 120px;
+	position: relative;
+	flex-shrink: 0;
+
+	@media screen and (max-width: 930px) {
+		margin-left: 0;
+		margin-bottom: 56px;
+	}
+
+	.bottle-bg {
+		width: 320px;
+		height: 450px;
+		object-fit: cover;
+		border-radius: 160px;
+
+		@media screen and (max-width: 930px) {
+			width: 260px;
+			height: 390px;
+		}
+		@media screen and (max-width: 575px) {
+			width: 220px;
+			height: 340px;
+		}
+	}
+
+	.bottle-img {
+		position: absolute
+		top: 25%;
+		left: 0;
+		transform: scale(1.6);
+	}
+}
+
+.swiper-pagination {
+	position: absolute;
+	right: 30px;
+	left: auto;
+	top: 100px;
+	width: auto;
+	bottom: auto;
+	z-index: 2;
+	font-size: 14px;
+	font-family: var(--body-font);
+	font-weight: 500;
+}
+
+.button-wrapper {
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+
+	@media screen and (max-width: 930px) {
+		top: 0;
+		left: 0;
+		width: 100%;
+		justify-content: space-between;
+		padding: 0 60px;
+	}
+	
+	@media screen and (max-width: 575px) {
+		padding: 0 20px;
+	}
+
+	svg {
+		width: 28px;
+	}
+
+	.swiper-button {
+		border: 1px solid var(--body-color);
+		border-radius: 50%;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(to right, var(--body-color) 40%, transparent 0%);
+		background-size: 200% 100%;
+		background-position: right bottom;
+		transition: all 0.3s ease-out;
+		cursor: pointer;
+
+		& + .swiper-button {
+			margin-left: 16px;
+
+			@media screen and (max-width: 930px) {
+				margin-left: 0;
+			}
+		}
+
+		&:hover {
+			background-color: var(--body-color);
+			background-position: left bottom;
+			svg {
+				stroke: #fff;
+			}
+		}
+	}
+
+	.swiper-prev-button {
+		background: linear-gradient(to left, var(--body-color) 40%, transparent 0%);
+		background-size: 200% 100%;
+		background-position: left bottom;
+		transition: all 0.3s ease-out;
+		svg {
+			transform: rotate(-180deg);
+		}
+		&:hover {
+			background-position: right bottom;
+		}
+	}
+}
+
+.swiper-slide {
+	opacity: 0 !important;
+	transition: 0.4s;
+	&-active {
+		opacity: 1 !important;
+	}
+}
+
+.swiper-slide .main-wrapper > *,
+.swiper-slide .main-content > * {
+	transform: translateY(-30px);
+	opacity: 0;
+	transition-duration: 0.8s;
+}
+
+.swiper-slide-active .main-wrapper > *,
+.swiper-slide-active .main-content > * {
+	transform: none;
+	opacity: 1;
+}
+
+.swiper-slide .bottle-bg {
+	transition-duration: 0.6s;
+	opacity: 0;
+	object-position: 60%;
+}
+
+.swiper-slide-active .bottle-bg {
+	opacity: 1;
+	transform: none;
+	object-position: 50%;
+}
+
+.swiper-slide .bottle-img {
+	transition-duration: 0.8s;
+	transform: scale(1.2);
+	opacity: 0;
+}
+
+.swiper-slide-active .bottle-img {
+	opacity: 1;
+	transform: scale(1.6);
+}
+
+[data-sld="1"] {
+	.container,
+	.header {
+		background-color: var(--savanna-bg);
+	}
+}
+
+[data-sld="2"] {
+	.container,
+	.header {
+		background-color: var(--glacier-bg);
+	}
+}
+
+[data-sld="3"] {
+	.container,
+	.header {
+		background-color: var(--coral-bg);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.linkable {
+  color: #ED2839;
+  text-decoration: none;
+background-image: linear-gradient(#ED2839, #ED2839);
+background-size: 0% 0.1em;
+background-position-x: 0%;
+background-position-y: 100%;
+background-repeat: no-repeat;
+transition: background-size 0.2s cubic-bezier(0,.45,.45,1);
+}
+
+a:hover,
+a:focus,
+a:active {
+background-size: 100% 0.1em;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins';
+}
+
+
+
+
+
+
+
+
+#container-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  padding: 10px;
+}
+
+.grid-item {
+  background: white;
+  padding: 16px;
+    animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  margin: 8px;
+  border-radius: 24px;
+  box-shadow: 0px 0px 30px #000;
+  height: 256px;
+}
+
+.gia {
+  animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4; 
+}
+
+.ge {
+  animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4; 
+  position: relative;
+  top: -280px;
+  left: 400px;
+  width: 200px;
+}
+
+.ga {
+  animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4; 
+  position: relative;
+  top: -620px;
+  left: 810px;
+  width: 200px;
+}
+
+.g {
+  animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4; 
+  position: relative;
+  top: -935px;
+  left: 1210px;
+  width: 200px;
+}
+
+.gi {
+  animation-name: fade-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4; 
+  position: relative;
+  top: 35px;
+  left: 0px;
+  width: 200px;
+}
+
+
+
+.gia > div > p {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 815px) {
+  .gia > div > .title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+@media (max-width: 645px) {
+  .side-img {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 493px) {
+  .gia > div > .title {
+    font-size: 16px;
+  }
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+#example1 {
+  box-shadow: 8px 10px 10px #888888;
+  text-align: center;
+  width: 1365px;
+  padding: 0;
+}
+
+
+#example2 {
+  box-shadow: 8px 10px 10px #888888;
+  text-align: center;
+  width: 1365px;
+  padding: 0;
+}
+
+.bbb{
+  border-left: soild blue 5px;
+}
+
+.container-fluid{
+  width: 100%;
+  height: auto;
+}
+
+.nnn{
+  width: 80%; height: auto;
+  position: relative;
+  left: 13px;
+}
+
+.nn{
+  width: 80%; height: auto;
+  position: relative;
+  left: 20px;
+}
+
+.nnn{
+  width: 80%; height: auto;
+  position: relative;
+  left: 17px;
+}
