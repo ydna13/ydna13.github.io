@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <link href="index.css">
 
 <div class="container-fluid" style="background: url('https://media.istockphoto.com/photos/abstract-3d-concrete-cube-background-with-neon-lights-picture-id1185010668?b=1&k=20&m=1185010668&s=170667a&w=0&h=kvDYzMrxOA0lZH7b3kjxFznSanrfQV8FZC905mxYwVU=');height:200px; width: 1370px; padding: 0;"><b><div class="p">
@@ -554,4 +554,4 @@ padding: 5px;
         <ul>from</ul>
         <ul>VISUAL Labbs™</ul>
     </ul>
-</div>
+
